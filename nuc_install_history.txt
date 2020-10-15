@@ -1,0 +1,136 @@
+ln -sf /usr/share/zoneinfo/Europe/Bucharest /etc/localtime
+hwclock --systohc
+sed -i 's/#en_US.U/en_US.U' /etc/locale.gen
+sed -i 's/#en_US.U/en_US.U/' /etc/locale.gen
+cat /etc/locale.gen | less
+locale-gen
+echo "LANG=en_US.UTF-8" > /etc/locale.conf
+echo "KEYMAP=us" > /etc/vconsole.conf
+echo "archnuc" /etc/hostname
+echo "archnuc" > /etc/hostname
+cat /etc/hostname
+cat > /etc/hosts << EOF
+127.0.0.1 localhost
+::1 localhost
+127.0.0.1 archnuc.localdomain archnuc
+EOF
+
+cat /etc/hosts 
+passwd
+pacman -S man-pages
+pacman -S texinfo inetutils netctl dhcpcd networkmanager nano dialog linux-headers
+pacman -S openssh
+pacman -S grub efibootmgr os-prober mtools
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
+exir
+exit
+ping -c 3 archlinux.org
+systemctl start dhcpcd
+ping -c 3 archlinux.org
+ping -c 3 archlinux.org
+systemctl status dhcpcd
+ping -c 3 archlinux.org
+systemctl enable dhcpcd
+ip addr show
+ip route show
+netctl --help
+pacman -S terminus-font
+set-font ter-132n
+setfont ter-132n
+vim /etc/vconsole.conf 
+reboot
+vim /etc/netctl/eno1 
+ip addr show
+ps auxw
+ip addr show
+pacman -S reflector
+cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.default
+reflector --help
+reflector --help | less
+reflector --list-countries
+reflector --help | less
+reflector -c "Romania" -f 12 -l 10 -n 12 --save /etc/pacman.d/mirrorlist
+pacman -Syy
+cat /etc/pacman.conf 
+cat /etc/pacman.conf | less
+cat /etc/pacman.conf | less
+vim /etc/pacman.conf 
+pacman -Syu
+man useradd
+pacman -S manpages
+pacman -Ss manpages
+pacman -Ss man-pages
+
+pacman -Ss man
+pacman -S man
+man useradd
+useradd -m -g users -G wheel leo
+passwd leo
+man pacman
+pacman -Qe
+pacman -Qe | less
+man pacman
+history
+man history
+history | less
+cat /etc/pacman.d/mirrorlist
+ls /etc/netctl/examples/
+cat /etc/netctl/examples/ethernet-static 
+man ip
+ip -6 addr show
+ip addr show
+ip addr show
+cp /etc/netctl/examples/ethernet-static /etc/netctl/eno1
+ip addr show
+ip route show
+ls -la /etc/netctl/interfaces/
+ls -la /etc/netctl/examples/
+man netctl
+systemctl stop dhcpcd
+systemctl disable dhcpcd
+ls -la /etc/netctl/
+netctl enable eno1
+netctl start eno1
+vim /etc/netctl/eno1 
+netctl start eno1
+journalctl -xe
+netctl disable eno1
+systemctl start dhcpcd
+systemctl enable dhcpcd
+ip addr show
+ls -l /etc/netctl/
+mv /etc/netctl/eno1 /etc/netctl/enp0s31f6
+ip addr show
+pacman -S net-tools
+vim /etc/netctl/enp0s31f6 
+netctl
+netctl list
+mv /etc/netctl/enp0s31f6 /etc/netctl/eno1
+netctl list
+netctl start eno1
+systemctl status netctl@eno1.service
+netctl status eno1
+systemctl stop dhcpcd
+netctl status eno1
+netctl start eno1
+journalctl -xe
+netctl stop eno1
+netctl start eno1
+vim /etc/netctl/eno1
+systemctl stop dhcpcd
+systemctl disable dhcpcd
+netctl enable eno1
+reboot
+ip addr show
+ip addr show
+netctl start eno1
+ip addr show
+netctl enable eno1
+ip addr show
+ping -c 5 google.com
+reboot
+visudo
+EDITOR=vim; visudo
+pacman -S vi
+visudo
